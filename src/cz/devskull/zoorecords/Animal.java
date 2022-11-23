@@ -10,6 +10,9 @@ public abstract class Animal {
         this.weight = weight;
         this.age = age;
     }
+
+    public abstract void makeSound();
+
     public String getName() {
         return name;
     }
