@@ -6,15 +6,14 @@ public enum AnimalType {
     ELEPHANT("Slon",Elephant.class);
 
     private String czechVersion;
-    private Class<Animal> animalClass;
+    private Class animalClass;
 
-    <T> AnimalType(String czechVersion, Class<T> Class){
+    AnimalType(String czechVersion, Class animalClass){
         this.czechVersion = czechVersion;
-        this.animalClass = (Class<Animal>) Class;
+        this.animalClass = animalClass;
     }
 
-    public Animal getAnimal(/*Object... args*/) throws Exception {
-        //return (Animal) this.animalClass.getConstructors()[0].newInstance(args);
+    public Animal getAnimal() throws Exception {
         return (Animal) this.animalClass.getConstructors()[0].newInstance();
     }
     public static AnimalType getAnimalTypeByName(String name) {
