@@ -3,9 +3,19 @@ package cz.devskull.zoorecords;
 public class Dog extends Animal{
     private boolean huntingMood;
 
-    public Dog(String name, double weight, int age, boolean huntingMood) {
-        super(name, weight, age);
-        this.huntingMood = huntingMood;
+    public Dog() {
+        super();
+    }
+
+    @Override
+    public void setAnimal() {
+        try{
+            super.setAnimal();
+            System.out.println("Má pes loveckou náladu?");
+            this.huntingMood = scanner.nextBoolean();
+        }catch (Exception e){
+            System.out.println("Něco si zadal špatně, zkus to znovu!");
+        }
     }
 
     @Override
