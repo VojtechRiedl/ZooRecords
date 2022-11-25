@@ -14,7 +14,7 @@ public enum AnimalType {
     }
 
     public Animal getAnimal() throws Exception {
-        return (Animal) this.animalClass.getConstructors()[0].newInstance();
+        return (Animal) this.animalClass.getConstructor().newInstance();
     }
     public static AnimalType getAnimalTypeByName(String name) {
         for (AnimalType animalType : AnimalType.values()){
